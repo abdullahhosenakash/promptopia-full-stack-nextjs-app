@@ -34,3 +34,15 @@ export const PATCH = async (request, { params }) => {
     return Response('Failed to update the prompt', { status: 500 });
   }
 };
+
+// DELETE method to delete data
+export const DELETE = async (request, { params }) => {
+  try {
+    await connectToDB();
+
+    await Prompt.findByIdAndRemove(params.id);
+    return new Response('Prompt deleted successfully', { status: 200 });
+  } catch (error) {
+    return new Response('Failed to delete the prompt', { status: 500 });
+  }
+};
