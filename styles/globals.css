@@ -81,6 +81,33 @@
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
 
+.skeleton_btn {
+  @apply w-28 rounded-full bg-gray-400 py-1.5 px-5 transition-all;
+}
+
+.skeleton_image {
+  @apply w-[37px] h-[37px] rounded-full text-gray-400 transition-all;
+}
+
+.skeleton_head {
+  @apply w-28 py-1.5 rounded-full bg-gray-400 transition-all;
+}
+
+.skeleton_email {
+  @apply py-1 px-20 rounded-full bg-gray-400 transition-all;
+}
+
+.skeleton_copy {
+  @apply w-7 h-7 rounded-full bg-gray-400 transition-all;
+}
+
+.skeleton_text {
+  @apply py-1 px-20 rounded-full bg-gray-400 transition-all;
+}
+
+.skeleton_tag {
+  @apply w-6 px-12 py-1 mr-2 rounded-full bg-gray-400 transition-all;
+}
 .outline_btn {
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
 }

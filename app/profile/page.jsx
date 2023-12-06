@@ -8,6 +8,7 @@ const MyProfile = () => {
   const { data: session } = useSession();
   const router = useRouter();
   const [posts, setPosts] = useState([]);
+  const [dataLoading, setDataLoading] = useState(false);
 
   const handleEdit = (post) => {
     router.push(`/update-prompt?id=${post._id}`);
@@ -32,9 +33,11 @@ const MyProfile = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
+      setDataLoading(true);
       const response = await fetch(`/api/users/${session?.user?.id}/posts`);
       const data = await response.json();
       setPosts(data);
+      setDataLoading(false);
     };
     if (session?.user?.id) fetchPosts();
   }, [session]);
@@ -46,6 +49,7 @@ const MyProfile = () => {
       data={posts}
       handleEdit={handleEdit}
       handleDelete={handleDelete}
+      dataLoading={dataLoading}
     />
   );
 };
